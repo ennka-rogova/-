@@ -27,15 +27,17 @@ void printHeight(double height, int seconds)
 }
 int main()
 {   
-    int heightInitial, second;
+    int heightInitial, second=0;
     double height;
     setlocale(LC_ALL, "Russian");
     heightInitial = getInitaialHeight();
-    for (second = 0; second <= 5; second++)
+    do
     {
         height = calculateHeight(heightInitial, second);
         printHeight(height, second);
-    }
+        second++;
+    } while (height > 0.0);
+    return 0;
 }
 
 
